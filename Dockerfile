@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8000
 
 # 启动 Django 应用（生产推荐用 gunicorn）
-CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:$PORT"]
