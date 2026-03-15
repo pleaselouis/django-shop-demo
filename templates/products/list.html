@@ -1,0 +1,19 @@
+<h1>Products</h1>
+
+{% for p in products %}
+
+<div>
+
+<h2>{{p.name}}</h2>
+
+<img src="{{p.image}}" width="200">
+
+<p>{{p.description}}</p>
+
+<b>${{p.price}}</b>
+
+</div>
+
+<hr>
+
+{% endfor %}s
