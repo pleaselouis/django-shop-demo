@@ -1,9 +1,12 @@
-services:
+version: "3.9"
 
+services:
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:$PORT
+    command: python manage.py runserver 0.0.0.0:${PORT:-8000}
     volumes:
       - .:/app
     ports:
-      - "$PORT:$PORT"
+      - "${PORT:-8000}:${PORT:-8000}"
+    environment:
+      - PORT=8000
